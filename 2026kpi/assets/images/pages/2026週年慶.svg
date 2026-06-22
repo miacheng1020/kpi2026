@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E9F4FF"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs>
+<rect width="1200" height="760" rx="48" fill="url(#g)"/>
+<circle cx="1040" cy="130" r="130" fill="#005F99" opacity=".12"/>
+<circle cx="150" cy="650" r="190" fill="#005F99" opacity=".10"/>
+<rect x="92" y="100" width="240" height="42" rx="21" fill="#005F99" opacity=".12"/>
+<text x="92" y="335" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="76" font-weight="800" fill="#005F99">2026週年慶</text>
+<text x="96" y="410" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="30" fill="#005F99" opacity=".72">2026 H1 KPI Review</text>
+<rect x="92" y="490" width="310" height="72" rx="36" fill="#005F99" opacity=".16"/>
+<text x="132" y="538" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="26" font-weight="700" fill="#005F99">成果縮圖可替換</text>
+</svg>
