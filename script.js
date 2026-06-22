@@ -1,12 +1,41 @@
 'use strict';
 
 const landingPages = [
-  {title:'日本自由配行銷頁',date:'2026.01',type:'上線行銷頁',img:'assets/images/pages/日本自由配行銷頁.svg',url:'#'},
-  {title:'賞花行銷頁 Part3 / Part4',date:'2026.01–04',type:'季節主題頁',img:'assets/images/pages/賞花行銷頁.svg',url:'#'},
-  {title:'2026 週年慶',date:'2026.01–03',type:'大型活動頁',img:'assets/images/pages/2026週年慶.svg',url:'#'},
-  {title:'VIP 出遊頁面',date:'2026.03',type:'會員活動頁',img:'assets/images/pages/VIP出遊頁面.svg',url:'#'},
-  {title:'韓國節慶頁',date:'2026.04',type:'目的地主題頁',img:'assets/images/pages/韓國節慶頁.svg',url:'#'},
-  {title:'生日禮頁面',date:'2026.03–04',type:'會員權益頁',img:'assets/images/pages/生日禮頁面.svg',url:'#'}
+  {
+    title: '2026週年慶',
+    date: '2026.03',
+    type: '大型活動頁',
+    img: 'assets/images/pages/2026週年慶（盲盒版）_1200x800.jpg',
+    url: 'https://www.settour.com.tw/act/mkt/anniversary/index.html'
+  },
+  {
+    title: '生日禮',
+    date: '2026.01',
+    type: '會員活動頁',
+    img: 'assets/images/pages/生日禮_1200x800.jpg',
+    url: 'https://www.settour.com.tw/act/mkt/member_event/birthday/'
+  },
+  {
+    title: '成都號',
+    date: '2026.03',
+    type: '地方主題頁',
+    img: 'assets/images/pages/成都號_1200x800.jpg',
+    url: 'https://www.settour.com.tw/act/gfg/chinatrain/chengdu.html'
+  },
+  {
+    title: '賞花行銷頁',
+    date: '2026.02',
+    type: '季節主題頁',
+    img: 'assets/images/pages/日本百花_1200x800.jpg',
+    url: 'https://www.settour.com.tw/act/mkt/flower/jp_mossphlox.html'
+  },
+  {
+    title: '韓國節慶頁',
+    date: '2026.04',
+    type: '地方主題頁',
+    img: 'assets/images/pages/韓國節慶_1200x800.jpg',
+    url: 'https://www.settour.com.tw/act/gfg/korea/seoul/festival.html'
+  }
 ];
 
 /*
@@ -20,52 +49,275 @@ const landingPages = [
     {title:'1080x1080', img:'assets/images/banners/xxx_1080x1080.jpg'}
   ]
 */
-function resizeSet(baseImg, baseTitle){
+function resizeSet(baseImg, baseTitle) {
   return [
-    {title:`${baseTitle}｜主視覺`, img:baseImg},
-    {title:`${baseTitle}｜Resize 600×320`, img:baseImg},
-    {title:`${baseTitle}｜Resize 1080×1080`, img:baseImg},
-    {title:`${baseTitle}｜Resize 1040×1040`, img:baseImg}
+    { title: `${baseTitle}｜主視覺`, img: baseImg },
+    { title: `${baseTitle}｜Resize 600×320`, img: baseImg },
+    { title: `${baseTitle}｜Resize 1080×1080`, img: baseImg },
+    { title: `${baseTitle}｜Resize 1040×1040`, img: baseImg }
   ];
 }
 
 const bannerRows = [
-  { title:'銀行合作 / 品牌活動', items:[
-    {title:'玉山銀行自由行折扣碼',cat:'銀行合作 Banner｜2026.01',img:'assets/images/banners/銀行合作.svg'},
-    {title:'國泰世華日本賞',cat:'銀行合作 Banner｜2026.01',img:'assets/images/banners/銀行合作.svg'},
-    {title:'WBC 棒球活動',cat:'品牌活動 Banner｜2026.02',img:'assets/images/banners/WBC活動.svg'},
-    {title:'WBC 應援優惠',cat:'品牌活動 Banner｜2026.03',img:'assets/images/banners/WBC活動.svg'},
-    {title:'OneAD 週年慶',cat:'廣告延伸 Banner｜2026.03',img:'assets/images/banners/WBC活動.svg'},
-    {title:'LINE 推播 MyCash',cat:'推播素材｜2026.04',img:'assets/images/banners/銀行合作.svg'}
-  ]},
-  { title:'日本 / 韓國季節旅遊', items:[
-    {title:'九州豪斯登堡春日',cat:'日本主題 Banner｜2026.01',img:'assets/images/banners/日本賞櫻.svg'},
-    {title:'韓國賞櫻',cat:'韓國季節 Banner｜2026.01',img:'assets/images/banners/韓國節慶.svg'},
-    {title:'日本賞櫻 Resize',cat:'尺寸延伸｜2026.02',img:'assets/images/banners/日本賞櫻.svg'},
-    {title:'迷你團紫藤花',cat:'日本季節 Banner｜2026.03',img:'assets/images/banners/日本賞櫻.svg'},
-    {title:'JR 西日本觀光列車',cat:'日本交通主題｜2026.03',img:'assets/images/banners/日本賞櫻.svg'},
-    {title:'韓國節慶',cat:'目的地活動 Banner｜2026.05',img:'assets/images/banners/韓國節慶.svg'}
-  ]},
-  { title:'海島 / 暑假 / 郵輪商品', items:[
-    {title:'沖繩沁夏拾光',cat:'夏季旅遊 Banner｜2026.05',img:'assets/images/banners/沖繩夏拾光.svg'},
-    {title:'LINE x 沖繩沁夏拾光',cat:'推播延伸素材｜2026.05',img:'assets/images/banners/沖繩夏拾光.svg'},
-    {title:'石垣島渡輪',cat:'海島商品 Banner｜2026.05',img:'assets/images/banners/沖繩夏拾光.svg'},
-    {title:'MSC 郵輪冬季',cat:'郵輪商品 Banner｜2026.05',img:'assets/images/banners/郵輪商品.svg'},
-    {title:'旅展表格 / 商品延伸',cat:'活動資訊素材｜2026.05',img:'assets/images/banners/郵輪商品.svg'},
-    {title:'高鐵假期送住宿',cat:'國旅商品 Banner｜2026.05',img:'assets/images/banners/沖繩夏拾光.svg'}
-  ]},
-  { title:'首頁 / 會員 / 活動延伸', items:[
-    {title:'首頁 Banner',cat:'官網首頁素材｜2026.01',img:'assets/images/banners/銀行合作.svg'},
-    {title:'生日禮',cat:'會員權益 Banner｜2026.01',img:'assets/images/pages/生日禮頁面.svg'},
-    {title:'春節公告',cat:'節慶公告素材｜2026.02',img:'assets/images/banners/日本賞櫻.svg'},
-    {title:'2026 週年慶宣圖',cat:'大型活動延伸｜2026.03',img:'assets/images/pages/2026週年慶.svg'},
-    {title:'同業會員日',cat:'會員活動素材｜2026.04',img:'assets/images/pages/VIP出遊頁面.svg'},
-    {title:'生日禮頁面甜人精',cat:'會員活動延伸｜2026.04',img:'assets/images/pages/生日禮頁面.svg'}
-  ]}
+  {
+    title: '活動宣傳', items: [
+      {
+        title: '2026週年慶',
+        cat: '週年慶 Banner｜2026.03',
+        img: 'assets/images/banners/20260311_2026週年慶_海外團旅_1200x628.jpg',
+        variants: [
+          { title: '2026週年慶_海外團旅｜1200×628', img: 'assets/images/banners/20260311_2026週年慶_海外團旅_1200x628.jpg' },
+          { title: '2026週年慶_盲盒版｜1200×628', img: 'assets/images/banners/20260306_2026週年慶_盲盒版_1200x628.jpg' },
+          { title: '2026週年慶_北海道商品｜1920x600', img: 'assets/images/banners/20260306_2026周年慶_北海道_1920x600.jpg' },
+          { title: '2026週年慶_北海道商品｜1040x1040', img: 'assets/images/banners/20260306_2026周年慶_北海道_1040x1040.jpg' },
+          { title: '2026週年慶_北海道商品｜600x400', img: 'assets/images/banners/20260306_2026周年慶_北海道_600x400.jpg' },
+          { title: '2026週年慶_窗貼｜895x290cm', img: 'assets/images/banners/2026周年慶窗貼-2.jpg' },
+        ]
+      },
+
+      {
+        title: 'LINE推播x送MyCash',
+        cat: '會員推廣 Banner｜2026.04',
+        img: 'assets/images/banners/20260422_LINE推播x送MyCash_960x500.jpg',
+        variants: [
+          { title: 'LINE推播x送MyCash｜960x500', img: 'assets/images/banners/20260422_LINE推播x送MyCash_960x500.jpg' },
+          { title: 'LINE推播x送MyCash｜1040x1040', img: 'assets/images/banners/20260422_LINE推播x送MyCash_1040x1040.jpg' },
+        ]
+      },
+
+      {
+        title: 'LINEx轉屬你的哞寶楓光',
+        cat: '會員推廣 Banner｜2026.05',
+        img: 'assets/images/banners/20260505_LINEx轉屬你的哞寶楓光_960x500.jpg',
+        variants: [
+          { title: 'LINEx轉屬你的哞寶楓光｜960x500', img: 'assets/images/banners/20260505_LINEx轉屬你的哞寶楓光_960x500.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜1080x1920', img: 'assets/images/banners/20260603_LINEx轉屬你的哞寶楓光_1080x1920_demo.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜960x500', img: 'assets/images/banners/20260511_LINEx轉屬你的哞寶楓光_960x500_01.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜960x500', img: 'assets/images/banners/20260511_LINEx轉屬你的哞寶楓光_960x500_02.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜960x500', img: 'assets/images/banners/20260511_LINEx轉屬你的哞寶楓光_960x500_03.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜960x500', img: 'assets/images/banners/20260511_LINEx轉屬你的哞寶楓光_960x500_04.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜960x500', img: 'assets/images/banners/20260511_LINEx轉屬你的哞寶楓光_960x500_05.jpg' },
+          { title: 'LINEx轉屬你的哞寶楓光｜2500x1686', img: 'assets/images/banners/20260605_LINE選單_轉屬你的哞寶楓光_2500x1686.jpg' },
+
+        ]
+      },
+
+      {
+        title: 'dcard徵文抽獎 ',
+        cat: '品牌推廣 Banner｜2026.06',
+        img: 'assets/images/banners/20260610_dcard抽獎_1200x800.jpg',
+        variants: [
+          { title: 'dcard抽獎｜1040x1040', img: 'assets/images/banners/20260610_dcard抽獎_1040x1040.jpg' },
+          { title: 'dcard抽獎贈品圖｜1040x1040', img: 'assets/images/banners/20260610_dcard徵文贈品圖_1040x1040.jpg' },
+          { title: 'dcard抽獎贈品圖｜1040x1040', img: 'assets/images/banners/20260610_dcard徵文贈品圖_頸枕_1040x1040.jpg' },
+          { title: 'dcard徵文｜1040x1040', img: 'assets/images/banners/20260608_dcard徵文_1040x1040.jpg' },
+          { title: 'dcard投稿流程｜1040x1040', img: 'assets/images/banners/20260610_dcard投稿流程_1040x1040.jpg' },
+
+        ]
+      },
+
+    ]
+  },
+
+
+
+
+
+  {
+    title: '地區行銷', items: [
+
+      {
+        title: '日本x預約夏個東北',
+        cat: '日本 Banner｜2026.03',
+        img: 'assets/images/banners/20260421_日本x預約夏個東北_1200x628.jpg',
+        variants: [
+          { title: '日本x預約夏個東北｜1200×628', img: 'assets/images/banners/20260421_日本x預約夏個東北_1200x628.jpg' },
+          { title: '日本x預約夏個東北｜1920x600', img: 'assets/images/banners/20260330_日本x預約夏個東北_版頭_1920x600.jpg' },
+          { title: '日本x預約夏個東北｜1040x1040', img: 'assets/images/banners/20260330_日本x預約夏個東北_1040x1040.jpg' },
+          { title: '日本x預約夏個東北｜1080x1920', img: 'assets/images/banners/20260330_日本x預約夏個東北_1080x1920.jpg' },
+        ]
+      },
+
+      {
+        title: 'WBC棒球',
+        cat: '日本 Banner｜2026.02',
+        img: 'assets/images/banners/20260306_WBC加碼應援_1200x628.jpg',
+        variants: [
+          { title: 'WBC棒球｜1200×628', img: 'assets/images/banners/20260306_WBC加碼應援_1200x628.jpg' },
+          { title: 'WBC棒球｜1040x1040', img: 'assets/images/banners/20260306_WBC加碼應援_1040x1040.jpg' },
+          { title: 'WBC棒球｜1920x600', img: 'assets/images/banners/20260226_WBC棒球_1920x600.jpg' },
+          { title: 'WBC棒球｜600x400', img: 'assets/images/banners/20260226_WBC棒球_600x400(純文字).jpg' },
+        ]
+      },
+
+      {
+        title: '美加東賞楓',
+        cat: '美加 Banner｜2026.04',
+        img: 'assets/images/banners/20260430_美加東賞楓_1200x628.jpg',
+        variants: [
+          { title: '美加東賞楓｜1200×628', img: 'assets/images/banners/20260430_美加東賞楓_1200x628.jpg' },
+          { title: '美加東賞楓｜1040x1040', img: 'assets/images/banners/20260430_美加東賞楓_1040x1040.jpg' },
+          { title: '美加東賞楓｜1920x600', img: 'assets/images/banners/20260416_美加東賞楓_1920x600.jpg' },
+          { title: '美加東賞楓｜1080x1920', img: 'assets/images/banners/20260430_美加東賞楓_1080x1920.jpg' },
+          { title: '美加東賞楓｜600x400', img: 'assets/images/banners/20260430_美加東賞楓_600x400(純文字).jpg' },
+        ]
+      },
+
+
+
+      {
+        title: '首頁大看板',
+        cat: '綜合地區 Banner｜2026.01-06',
+        img: 'assets/images/banners/20260416_黃金海陸空_1200x628.jpg',
+        variants: [
+          { title: '黃金海陸空｜1920x600', img: 'assets/images/banners/20260416_黃金海陸空_1920x600.jpg' },
+          { title: '澳洲｜1920x600', img: 'assets/images/banners/20260604_澳洲_1920x600.jpg' },
+          { title: '雪梨｜1920x600', img: 'assets/images/banners/20260604_雪梨_1920x600.jpg' },
+          { title: '迷你團x母親節｜1920x600', img: 'assets/images/banners/20260413_迷你團x母親節_1920x600.jpg' },
+          { title: '黃金海岸｜1920x600', img: 'assets/images/banners/20260416_黃金海岸_1920x600.jpg' },
+          { title: '紐西蘭｜1920x600', img: 'assets/images/banners/20260318_紐西蘭_1920x600.jpg' },
+          { title: '幸福獨旅｜1920x600', img: 'assets/images/banners/20260312_幸福獨旅_1920x600.jpg' },
+          { title: '紫藤花季｜1920x600', img: 'assets/images/banners/20260327_紫藤花季_1920x600.jpg' },
+          { title: '日本x暑假清倉｜1920x600', img: 'assets/images/banners/20260608_日本x暑假清倉_1920x600.jpg' },
+          { title: '優惠延長｜1920x600', img: 'assets/images/banners/20260327_優惠延長_1920x600.jpg' },
+
+        ]
+      },
+
+      {
+        title: '韓國好康',
+        cat: '韓國 Banner｜2026.04',
+        img: 'assets/images/banners/20260421_韓國好康_1200x628.jpg',
+        variants: [
+          { title: '韓國好康｜1200×628', img: 'assets/images/banners/20260421_韓國好康_1200x628.jpg' },
+          { title: '韓國好康｜960x1200', img: 'assets/images/banners/20260421_韓國好康_960x1200.jpg' },
+          { title: '韓國好康｜600x400', img: 'assets/images/banners/20260421_韓國好康_600x400(純文字).jpg' },
+        ]
+      },
+
+      {
+        title: '沖繩沁夏拾光',
+        cat: '日本 Banner｜2026.05',
+        img: 'assets/images/banners/20260504_沖繩沁夏拾光_1200x628.jpg',
+        variants: [
+          { title: '沖繩沁夏拾光｜1200×628', img: 'assets/images/banners/20260504_沖繩沁夏拾光_1200x628.jpg' },
+          { title: '沖繩沁夏拾光｜1040x1040', img: 'assets/images/banners/20260504_沖繩沁夏拾光_1200x1200.jpg' },
+        ]
+      },
+
+    ]
+  },
+
+
+
+
+
+
+
+  {
+    title: '商品推廣', items: [
+
+            {
+        title: '石垣島渡輪',
+        cat: '郵輪 Banner｜2026.05',
+        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        variants: [
+          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
+          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
+          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+          { title: '石垣島渡輪｜600x400', img: 'assets/images/banners/20260518_石垣島渡輪_600x400.jpg' },
+        ]
+      },
+
+
+      {
+        title: 'MSC郵輪冬季',
+        cat: '郵輪 Banner｜2026.05',
+        img: 'assets/images/banners/20260519_MSC郵輪冬季_1200x628.jpg',
+        variants: [
+          { title: 'MSC郵輪冬季｜1200×628', img: 'assets/images/banners/20260519_MSC郵輪冬季_1200x628.jpg' },
+          { title: 'MSC郵輪冬季｜1920x600', img: 'assets/images/banners/20260519_MSC郵輪冬季_1920x600.jpg' },
+          { title: 'MSC郵輪冬季｜960x1200', img: 'assets/images/banners/20260519_MSC郵輪冬季_960x1200.jpg' },
+        ]
+      },
+
+
+
+      {
+        title: 'JR西日本觀光列車',
+        cat: '火車 Banner｜2026.03',
+        img: 'assets/images/banners/20260324_JR西日本觀光列車_1200x628.jpg',
+        variants: [
+          { title: 'JR西日本觀光列車｜1200×628', img: 'assets/images/banners/20260324_JR西日本觀光列車_1200x628.jpg' },
+          { title: 'JR西日本觀光列車｜1080x1920', img: 'assets/images/banners/20260324_JR西日本觀光列車_1080x1920.jpg' },
+          { title: 'JR西日本觀光列車｜900x600', img: 'assets/images/banners/20260324_JR西日本觀光列車_900x600.jpg' },
+        ]
+      },
+
+      {
+        title: '國泰世華',
+        cat: '信用卡 Banner｜2026.02',
+        img: 'assets/images/banners/國泰世華_1200x628.jpg',
+        variants: [
+          { title: '國泰世華｜1200×628', img: 'assets/images/banners/國泰世華_1200x628.jpg' },
+          { title: '國泰世華｜1920x600', img: 'assets/images/banners/國泰世華_1040x1040.jpg' },
+          { title: '國泰世華｜1080x1920', img: 'assets/images/banners/國泰世華_1080x1920_new.jpg' },
+        ]
+      },
+
+    
+    ]
+  },
+
+
+
+
+
+  {
+    title: '異業合作 / 其他', items: [
+
+      {
+        title: '石垣島渡輪',
+        cat: '日本 Banner｜2026.02',
+        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        variants: [
+          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
+          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
+          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+        ]
+      },
+
+      {
+        title: '石垣島渡輪',
+        cat: '日本 Banner｜2026.02',
+        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        variants: [
+          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
+          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
+          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+        ]
+      },
+
+      {
+        title: '石垣島渡輪',
+        cat: '日本 Banner｜2026.02',
+        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        variants: [
+          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
+          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
+          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+        ]
+      },
+
+
+
+      
+    ]
+  }
 ];
 
 bannerRows.forEach(row => row.items.forEach(item => {
-  if(!item.variants) item.variants = resizeSet(item.img, item.title);
+  if (!item.variants) item.variants = resizeSet(item.img, item.title);
 }));
 
 let lightboxGallery = [];
@@ -74,7 +326,7 @@ let carouselState = [];
 
 document.addEventListener('DOMContentLoaded', init);
 
-function init(){
+function init() {
   renderLandingPages();
   renderBannerRows();
   bindLightbox();
@@ -82,9 +334,9 @@ function init(){
   bindCursor();
 }
 
-function renderLandingPages(){
+function renderLandingPages() {
   const pageGrid = document.querySelector('#pageGrid');
-  if(!pageGrid) return;
+  if (!pageGrid) return;
   landingPages.forEach(p => {
     const a = document.createElement('a');
     a.className = 'project-card';
@@ -95,9 +347,9 @@ function renderLandingPages(){
   });
 }
 
-function renderBannerRows(){
+function renderBannerRows() {
   const wrap = document.querySelector('#bannerGalleryRows');
-  if(!wrap) return;
+  if (!wrap) return;
   wrap.innerHTML = '';
   carouselState = bannerRows.map(() => 0);
 
@@ -133,107 +385,107 @@ function renderBannerRows(){
     const prev = e.target.closest('[data-carousel-prev]');
     const next = e.target.closest('[data-carousel-next]');
     const card = e.target.closest('.banner-card');
-    if(prev){ moveCarousel(Number(prev.dataset.carouselPrev), -1); return; }
-    if(next){ moveCarousel(Number(next.dataset.carouselNext), 1); return; }
-    if(card){ openBannerLightbox(Number(card.dataset.bannerRow), Number(card.dataset.bannerItem)); }
+    if (prev) { moveCarousel(Number(prev.dataset.carouselPrev), -1); return; }
+    if (next) { moveCarousel(Number(next.dataset.carouselNext), 1); return; }
+    if (card) { openBannerLightbox(Number(card.dataset.bannerRow), Number(card.dataset.bannerItem)); }
   });
 
   window.addEventListener('resize', () => bannerRows.forEach((_, i) => updateCarousel(i)));
 }
 
-function getStep(rowIndex){
+function getStep(rowIndex) {
   const track = document.querySelector(`[data-carousel-track="${rowIndex}"]`);
   const card = track?.querySelector('.banner-card');
-  if(!track || !card) return 460;
+  if (!track || !card) return 460;
   const gap = parseFloat(getComputedStyle(track).gap) || 20;
   return card.getBoundingClientRect().width + gap;
 }
 
-function getMaxIndex(rowIndex){
+function getMaxIndex(rowIndex) {
   const track = document.querySelector(`[data-carousel-track="${rowIndex}"]`);
   const viewport = track?.parentElement;
-  if(!track || !viewport) return 0;
+  if (!track || !viewport) return 0;
   const step = getStep(rowIndex);
   const overflow = Math.max(0, track.scrollWidth - viewport.clientWidth);
   return Math.ceil(overflow / step);
 }
 
-function moveCarousel(rowIndex, dir){
+function moveCarousel(rowIndex, dir) {
   const max = getMaxIndex(rowIndex);
   let next = (carouselState[rowIndex] || 0) + dir;
-  if(next < 0) next = max;
-  if(next > max) next = 0;
+  if (next < 0) next = max;
+  if (next > max) next = 0;
   carouselState[rowIndex] = next;
   updateCarousel(rowIndex);
 }
 
-function updateCarousel(rowIndex){
+function updateCarousel(rowIndex) {
   const track = document.querySelector(`[data-carousel-track="${rowIndex}"]`);
-  if(!track) return;
+  if (!track) return;
   const max = getMaxIndex(rowIndex);
   carouselState[rowIndex] = Math.min(carouselState[rowIndex] || 0, max);
   const step = getStep(rowIndex);
   track.style.transform = `translateX(${-carouselState[rowIndex] * step}px)`;
 }
 
-function bindLightbox(){
+function bindLightbox() {
   document.addEventListener('click', e => {
     const single = e.target.closest('[data-lightbox-single]');
-    if(single){
-      openLightbox([{img: single.dataset.lightboxSingle, title: single.dataset.title || ''}], 0);
+    if (single) {
+      openLightbox([{ img: single.dataset.lightboxSingle, title: single.dataset.title || '' }], 0);
       return;
     }
 
     const oldSingle = e.target.closest('.open-lightbox');
-    if(oldSingle && oldSingle.dataset.gallery !== 'banner-project'){
-      openLightbox([{img: oldSingle.dataset.img, title: oldSingle.dataset.title || ''}], 0);
+    if (oldSingle && oldSingle.dataset.gallery !== 'banner-project') {
+      openLightbox([{ img: oldSingle.dataset.img, title: oldSingle.dataset.title || '' }], 0);
     }
   });
 
   document.querySelector('#lightboxPrev')?.addEventListener('click', e => { e.stopPropagation(); moveLightbox(-1); });
   document.querySelector('#lightboxNext')?.addEventListener('click', e => { e.stopPropagation(); moveLightbox(1); });
   document.querySelector('#lightboxClose')?.addEventListener('click', closeLightbox);
-  document.querySelector('#lightbox')?.addEventListener('click', e => { if(e.target.id === 'lightbox') closeLightbox(); });
+  document.querySelector('#lightbox')?.addEventListener('click', e => { if (e.target.id === 'lightbox') closeLightbox(); });
   document.addEventListener('keydown', e => {
     const lb = document.querySelector('#lightbox');
-    if(!lb || !lb.classList.contains('active')) return;
-    if(e.key === 'Escape') closeLightbox();
-    if(e.key === 'ArrowLeft') moveLightbox(-1);
-    if(e.key === 'ArrowRight') moveLightbox(1);
+    if (!lb || !lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') moveLightbox(-1);
+    if (e.key === 'ArrowRight') moveLightbox(1);
   });
 }
 
-function openBannerLightbox(rowIndex, itemIndex){
+function openBannerLightbox(rowIndex, itemIndex) {
   const project = bannerRows[rowIndex]?.items[itemIndex];
-  if(!project) return;
-  const items = (project.variants || [{img: project.img, title: project.title}]).map((v, i) => ({
+  if (!project) return;
+  const items = (project.variants || [{ img: project.img, title: project.title }]).map((v, i) => ({
     img: v.img,
     title: v.title || `${project.title}｜版本 ${i + 1}`,
-    cat: i === 0 ? project.cat : '同專案 Resize / 延伸尺寸'
+    cat: i === 0 ? project.cat : '同專案 視覺延伸 / Resize'
   }));
   openLightbox(items, 0);
 }
 
-function openLightbox(items, index = 0){
+function openLightbox(items, index = 0) {
   lightboxGallery = items || [];
   lightboxIndex = index;
   renderLightbox();
   const lb = document.querySelector('#lightbox');
-  if(!lb) return;
+  if (!lb) return;
   lb.classList.add('active');
   lb.setAttribute('aria-hidden', 'false');
 }
 
-function renderLightbox(){
+function renderLightbox() {
   const item = lightboxGallery[lightboxIndex];
-  if(!item) return;
+  if (!item) return;
   const img = document.querySelector('#lightboxImg');
   const title = document.querySelector('#lightboxTitle');
-  if(img){
+  if (img) {
     img.src = item.img;
     img.alt = item.title || '';
   }
-  if(title){
+  if (title) {
     title.textContent = item.cat ? `${item.title}｜${item.cat}` : (item.title || '');
   }
   const one = lightboxGallery.length <= 1;
@@ -241,46 +493,46 @@ function renderLightbox(){
   document.querySelector('#lightboxNext')?.classList.toggle('is-hidden', one);
 }
 
-function moveLightbox(dir){
-  if(lightboxGallery.length <= 1) return;
+function moveLightbox(dir) {
+  if (lightboxGallery.length <= 1) return;
   lightboxIndex = (lightboxIndex + dir + lightboxGallery.length) % lightboxGallery.length;
   renderLightbox();
 }
 
-function closeLightbox(){
+function closeLightbox() {
   const lb = document.querySelector('#lightbox');
-  if(!lb) return;
+  if (!lb) return;
   lb.classList.remove('active');
   lb.setAttribute('aria-hidden', 'true');
 }
 
-function bindReveal(){
+function bindReveal() {
   const targets = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
+  if (!('IntersectionObserver' in window)) {
     targets.forEach(el => el.classList.add('show'));
     return;
   }
   const io = new IntersectionObserver(entries => entries.forEach(en => {
-    if(en.isIntersecting) en.target.classList.add('show');
-  }), {threshold: .12});
+    if (en.isIntersecting) en.target.classList.add('show');
+  }), { threshold: .12 });
   targets.forEach(el => io.observe(el));
 }
 
-function bindCursor(){
+function bindCursor() {
   const dot = document.querySelector('.cursor-dot');
-  if(!dot) return;
+  if (!dot) return;
   window.addEventListener('mousemove', e => {
     dot.style.left = `${e.clientX}px`;
     dot.style.top = `${e.clientY}px`;
   });
   document.addEventListener('mouseover', e => {
-    if(e.target.closest('a,button,.project-card,.banner-card')){
+    if (e.target.closest('a,button,.project-card,.banner-card')) {
       dot.style.width = '42px';
       dot.style.height = '42px';
     }
   });
   document.addEventListener('mouseout', e => {
-    if(e.target.closest('a,button,.project-card,.banner-card')){
+    if (e.target.closest('a,button,.project-card,.banner-card')) {
       dot.style.width = '18px';
       dot.style.height = '18px';
     }
