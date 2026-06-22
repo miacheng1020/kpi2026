@@ -217,7 +217,7 @@ const bannerRows = [
   {
     title: '商品推廣', items: [
 
-            {
+      {
         title: '石垣島渡輪',
         cat: '郵輪 Banner｜2026.05',
         img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
@@ -265,7 +265,7 @@ const bannerRows = [
         ]
       },
 
-    
+
     ]
   },
 
@@ -277,41 +277,48 @@ const bannerRows = [
     title: '異業合作 / 其他', items: [
 
       {
-        title: '石垣島渡輪',
-        cat: '日本 Banner｜2026.02',
-        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        title: '料理狂人',
+        cat: '韓國 Banner｜2026.05',
+        img: 'assets/images/banners/20260512_料理狂人_1200x628.jpg',
         variants: [
-          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
-          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
-          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+          { title: '料理狂人｜1200×628', img: 'assets/images/banners/20260512_料理狂人_1200x628.jpg' },
+          { title: '料理狂人｜1080x1080', img: 'assets/images/banners/20260512_料理狂人_1080x1080.jpg' },
         ]
       },
 
       {
-        title: '石垣島渡輪',
-        cat: '日本 Banner｜2026.02',
-        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        title: '韓國節慶',
+        cat: '韓國 Banner｜2026.05',
+        img: 'assets/images/banners/20260504_韓國節慶_1200x628.jpg',
         variants: [
-          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
-          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
-          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+          { title: '韓國節慶｜1200×628', img: 'assets/images/banners/20260504_韓國節慶_1200x628.jpg' },
+          { title: '韓國節慶｜1080x1080', img: 'assets/images/banners/20260504_韓國節慶_1080x1080.jpg' },
+          { title: '韓國節慶｜1080x1920', img: 'assets/images/banners/20260504_韓國節慶_1080x1920.jpg' },
         ]
       },
 
       {
-        title: '石垣島渡輪',
-        cat: '日本 Banner｜2026.02',
-        img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg',
+        title: 'YT封面x越南',
+        cat: '影片封面 Banner｜2026.04',
+        img: 'assets/images/banners/20260409_YT封面x越南_2500x1440.jpg',
         variants: [
-          { title: '石垣島渡輪｜1200×628', img: 'assets/images/banners/20260518_石垣島渡輪_1200x628.jpg' },
-          { title: '石垣島渡輪｜1920x600', img: 'assets/images/banners/20260518_石垣島渡輪_1920x600.jpg' },
-          { title: '石垣島渡輪｜1200x1200', img: 'assets/images/banners/20260518_石垣島渡輪_1200x1200.jpg' },
+          { title: 'YT封面x越南｜2500x1440', img: 'assets/images/banners/20260409_YT封面x越南_2500x1440.jpg' },
+          { title: 'YT封面x越南｜1080x1920', img: 'assets/images/banners/20260409_YT封面x越南_1080x1920.jpg' },
         ]
       },
 
+            {
+        title: 'YT封面x韓國',
+        cat: '影片封面 Banner｜2026.04',
+        img: 'assets/images/banners/20260409_YT封面x韓國慶洲_2500x1440.jpg',
+        variants: [
+          { title: 'YT封面x韓國慶洲｜2500x1440', img: 'assets/images/banners/20260409_YT封面x韓國慶洲_2500x1440.jpg' },
+          { title: 'YT封面x韓國釜山網美景點｜2500x1440', img: 'assets/images/banners/20260409_YT封面x韓國釜山網美景點_2500x1440.jpg' },
+          { title: 'YT封面x韓國釜山美食清單｜2500x1440', img: 'assets/images/banners/20260409_YT封面x韓國釜山美食清單_2500x1440.jpg' },
+          { title: 'YT封面x韓國巨濟島｜2500x1440', img: 'assets/images/banners/20260409_YT封面x韓國巨濟島_2500x1440.jpg' },
+        ]
+      },
 
-
-      
     ]
   }
 ];

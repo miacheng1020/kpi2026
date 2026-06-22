@@ -544,30 +544,55 @@ img {
 }
 
 /* =========================================================
-   09｜動態賀卡區塊
-   直式影片大小、影片右側文字卡片
+   09｜AI動態設計探索
+   左賀卡｜右影片
 ========================================================= */
 
-.video-wrap {
-   display: grid;
-   grid-template-columns: 1.2fr .8fr;
-   gap: 26px;
-   align-items: center
+.motion-layout{
+   display:flex;
+   align-items:flex-start;
+   justify-content:flex-start;
+   gap:32px;
+   margin-top:48px;
 }
 
-.video-wrap video {
-   width: 100%;
-   border-radius: 30px;
-   box-shadow: var(--shadow);
-   background: #111
+.motion-cards{
+   display:flex;
+   gap:28px;
+   align-items:flex-start;
 }
 
-.video-copy {
-   background: var(--card);
-   border: 1px solid var(--line);
-   border-radius: 28px;
-   padding: 30px
+.motion-cards img{
+   width:100%;
+   max-width:380px;
+   aspect-ratio:1/1;
+   object-fit:cover;
+
+   border-radius:24px;
+   box-shadow:var(--shadow);
+
+   transition:.35s ease;
 }
+
+.motion-cards img:hover{
+   transform:translateY(-4px);
+}
+
+.motion-video{
+   display:flex;
+   justify-content:flex-start;
+    margin-top:-200px;
+}
+
+.motion-video video{
+   width:100%;
+   max-width:350px;
+
+   border-radius:28px;
+   box-shadow:var(--shadow);
+   background:#111;
+}
+
 
 /* =========================================================
    10｜AI 導入成果區塊
@@ -1319,4 +1344,90 @@ img {
 /* 保留下半年目標區塊原本深色樣式 */
 #roadmap {
    background: #1f2933;
+}
+
+/* =========================================================
+   Motion 區塊 RWD｜賀卡與影片
+   桌機：賀卡1、賀卡2、影片同排
+   中尺寸：左邊賀卡上下排列，右邊影片
+   小尺寸：全部一排一個
+========================================================= */
+
+
+/* =========================================================
+   Motion 區塊 RWD｜賀卡與影片
+========================================================= */
+
+/* 中尺寸：左邊兩張賀卡上下排，總高度約等於右邊影片 */
+@media (max-width: 1250px){
+
+   .motion-layout{
+      --motion-gap: clamp(14px, 2vw, 24px);
+      --motion-video-w: clamp(240px, 28vw, 320px);
+      --motion-card-size: calc((var(--motion-video-w) * 16 / 9 - var(--motion-gap)) / 2);
+
+      display:grid;
+      grid-template-columns: var(--motion-card-size) var(--motion-video-w);
+      gap: clamp(24px, 3vw, 40px);
+      align-items:start;
+      justify-content:flex-start;
+   }
+
+   .motion-cards{
+      display:flex;
+      flex-direction:column;
+      gap:var(--motion-gap);
+      align-items:flex-start;
+   }
+
+ .motion-cards img{
+   width:var(--motion-card-size);
+   height:auto;
+   max-width:none;
+   object-fit:contain;
+}
+
+   .motion-video{
+      margin-top:0 !important;
+      display:flex;
+      justify-content:flex-start;
+   }
+
+   .motion-video video{
+      width:var(--motion-video-w);
+      max-width:none;
+   }
+}
+
+
+/* 小尺寸：文字 → 賀卡1 → 賀卡2 → 影片 */
+@media (max-width: 900px){
+
+   .motion-layout{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:24px;
+   }
+
+   .motion-cards{
+      width:100%;
+      align-items:center;
+   }
+
+   .motion-cards img{
+      max-width:340px;
+      width:100%;
+   }
+
+   .motion-video{
+      margin-top:0 !important;
+      width:100%;
+      justify-content:center;
+   }
+
+   .motion-video video{
+      max-width:300px;
+      width:100%;
+   }
 }
